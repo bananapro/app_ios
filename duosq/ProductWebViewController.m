@@ -13,6 +13,9 @@
 #import "UMFeedbackViewController.h"
 #import "UMFeedback.h"
 
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+
 #define kDefaultBackgroundColor [UIColor colorWithRed:206/255.0 green:31/255.0 blue:118/255.0 alpha:1]
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)?YES:NO
@@ -24,6 +27,12 @@
 @end
 
 @implementation ProductWebViewController
+
+
+NSString *sharetitle;
+NSString *sharesubtitle;
+NSString *shareurl;
+NSString *shareimg;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,7 +80,7 @@
         NSLog(@"productWebView URL:%@",urlRequest);
     }
     NSURL *url =[NSURL URLWithString:urlRequest];
-//    NSURL *url = [NSURL URLWithString:@"http://test.duosq.com/testfeedback.php"];
+//    NSURL *url = [NSURL URLWithString:@"http://10.50.180.233/duosq/weixin_test.php"];
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
     [self.productWebView loadRequest:request];
     self.productWebView.delegate = self;
@@ -104,6 +113,11 @@
     }
 
     NSLog(@"value:%@",value);
+    
+    sharetitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharetitle').value"];
+    sharesubtitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharesubtitle').value"];
+    shareurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareurl').value"];
+    shareimg = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareimg').value"];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -118,6 +132,8 @@
             NSArray *results = [str componentsSeparatedByRegex:@"\\jump:"];
             if ([results[1] isEqualToString:@"feedback"]) {
                 [self openfeedback];
+            }else if ([results[1] isEqualToString:@"sharesocial"]) {
+                [self shareSocial];
             }else{
                 NSURL *go_url =[NSURL URLWithString:results[1]];
                 if([[UIApplication sharedApplication]canOpenURL:go_url])
@@ -174,5 +190,32 @@
 	
     [HUD show:YES];
 }
+
+-(void)shareSocial{
+
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:shareimg]];
+    UIImage *shareimage = [UIImage imageWithData:imageData];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"53e23d15fd98c539f6008f10"
+                                      shareText:sharesubtitle
+                                     shareImage:shareimage
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
+                                       delegate:self];
+    [UMSocialData defaultData].extConfig.title = sharetitle;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = shareurl;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareurl;
+}
+
+//实现回调方法（可选）：
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+
 
 @end

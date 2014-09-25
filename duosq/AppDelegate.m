@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
+#import "UMSocial.h"
 #import "BaseViewController.h"
+#import "SocialViewController.h"
 #import "MLNavigationController.h"
 #import "UntilFunctions.h"
 #import "SSKeychain.h"
+#import "UMSocialWechatHandler.h"
 #import <SenTestingKit/SenTestingKit.h>
 
 @implementation AppDelegate
@@ -21,6 +23,11 @@
     [NSThread sleepForTimeInterval:2.0];
     [MobClick startWithAppkey:@"53e23d15fd98c539f6008f10" reportPolicy:BATCH   channelId:@"web"];
     NSLog(@"generateUUID:%@",[self checkuuid]);
+    
+    //set umeng social key
+    [UMSocialData setAppKey:@"53e23d15fd98c539f6008f10"];
+    [UMSocialWechatHandler setWXAppId:@"wxec7b3f3217f4fa5e" appSecret:@"890bdfaa6ebae5d699aa8dc290886891" url:@""];
+    
     
     //测试代码开始
 //    Class cls = NSClassFromString(@"UMANUtil");
@@ -109,6 +116,27 @@
         [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"]];
     }
 }
+
+
+//禁止横屏
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+//for wxchat start
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+//end
 
 - (NSString *)checkuuid{
     

@@ -41,7 +41,14 @@
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-		<dict/>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxec7b3f3217f4fa5e</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>com.duosq.app</string>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>3</string>
