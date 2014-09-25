@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "UMSocial.h"
 #import "BaseViewController.h"
-#import "SocialViewController.h"
 #import "MLNavigationController.h"
 #import "UntilFunctions.h"
 #import "SSKeychain.h"

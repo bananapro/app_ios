@@ -83,12 +83,9 @@
 		B877562919CF1E68000A864E /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B877561D19CF1E68000A864E /* UMSnsAccountViewController.xib */; };
 		B877562A19CF1E68000A864E /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B877561E19CF1E68000A864E /* UMSShareListController.xib */; };
 		B877562B19CF1E68000A864E /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B877561F19CF1E68000A864E /* UMSocialSDKResourcesNew.bundle */; };
-		B877562F19CF22B9000A864E /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B877562D19CF22B9000A864E /* SocialViewController.m */; };
-		B877563019CF22B9000A864E /* SocialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B877562E19CF22B9000A864E /* SocialViewController.xib */; };
 		B877563B19CFD0F1000A864E /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563319CFD0F1000A864E /* libSocialSina.a */; };
 		B877563C19CFD0F1000A864E /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563619CFD0F1000A864E /* libSocialWechat.a */; };
 		B877563D19CFD0F1000A864E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563719CFD0F1000A864E /* libWeChatSDK.a */; };
-		B877564019D3BA0B000A864E /* ShareSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = B877563F19D3BA0B000A864E /* ShareSocial.m */; };
 		B88243971972BBB20076E944 /* KeyWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88243961972BBB20076E944 /* KeyWordView.m */; };
 		B88243A31972C0870076E944 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88243A21972C0870076E944 /* KeyView.xib */; };
 		B88243A51972CFD10076E944 /* button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B88243A41972CFD10076E944 /* button_normal@2x.png */; };
@@ -270,9 +267,6 @@
 		B877561E19CF1E68000A864E /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		B877561F19CF1E68000A864E /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = UMSocialSDKResourcesNew.bundle; path = UMSocial_Sdk_4.1/UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		B877562019CF1E68000A864E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
-		B877562C19CF22B9000A864E /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
-		B877562D19CF22B9000A864E /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
-		B877562E19CF22B9000A864E /* SocialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialViewController.xib; sourceTree = "<group>"; };
 		B877563319CFD0F1000A864E /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
 		B877563419CFD0F1000A864E /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
 		B877563619CFD0F1000A864E /* libSocialWechat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWechat.a; sourceTree = "<group>"; };
@@ -280,8 +274,6 @@
 		B877563819CFD0F1000A864E /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
 		B877563919CFD0F1000A864E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		B877563A19CFD0F1000A864E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		B877563E19D3BA0B000A864E /* ShareSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareSocial.h; path = Model/ShareSocial.h; sourceTree = "<group>"; };
-		B877563F19D3BA0B000A864E /* ShareSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareSocial.m; path = Model/ShareSocial.m; sourceTree = "<group>"; };
 		B88243951972BBB20076E944 /* KeyWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyWordView.h; path = View/KeyWordView.h; sourceTree = "<group>"; };
 		B88243961972BBB20076E944 /* KeyWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyWordView.m; path = View/KeyWordView.m; sourceTree = "<group>"; };
 		B88243A21972C0870076E944 /* KeyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyView.xib; sourceTree = "<group>"; };
@@ -689,8 +681,6 @@
 				B887FD49196D3591006D39FA /* UntilCodeTool.h */,
 				B815564A198FD1EF00714F15 /* UntilFunctions.h */,
 				B815564B198FD1EF00714F15 /* UntilFunctions.m */,
-				B877563E19D3BA0B000A864E /* ShareSocial.h */,
-				B877563F19D3BA0B000A864E /* ShareSocial.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -880,9 +870,6 @@
 				B8B81E6719743A68009CDAF6 /* BaseViewController.xib */,
 				B8B1012E1993D7D5000C8BEF /* UMFeedbackViewController.h */,
 				B8B1012F1993D7D5000C8BEF /* UMFeedbackViewController.m */,
-				B877562C19CF22B9000A864E /* SocialViewController.h */,
-				B877562D19CF22B9000A864E /* SocialViewController.m */,
-				B877562E19CF22B9000A864E /* SocialViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1046,7 +1033,6 @@
 				B8EB477319B012FE0001EABB /* Default_320x480.png in Resources */,
 				B80D34E019C2B8A000A8E6B8 /* icon_new_29.png in Resources */,
 				B867EC0E19951EDC005BA650 /* main_block_3@2x.png in Resources */,
-				B877563019CF22B9000A864E /* SocialViewController.xib in Resources */,
 				B80D34E519C2B8A000A8E6B8 /* icon_new_80.png in Resources */,
 				B8AF61BF198AA5EC005F68F7 /* entryinfo.conf in Resources */,
 				B86B638D19B15F68005F38A5 /* Default.png in Resources */,
@@ -1129,13 +1115,11 @@
 				B8EE6249196D2DB8005CA955 /* SDNetworkActivityIndicator.m in Sources */,
 				B84359301963048E00640313 /* MetroInfoService.m in Sources */,
 				B8EE6247196D2DB8005CA955 /* SDDataCache.m in Sources */,
-				B877564019D3BA0B000A864E /* ShareSocial.m in Sources */,
 				B8AF61C6198DCDFD005F68F7 /* MBProgressHUD.m in Sources */,
 				B8996B201961019600CFEE51 /* AppDelegate.m in Sources */,
 				B88AA1F31972DCD200CAF6C4 /* SearchInfoService.m in Sources */,
 				B8EE6248196D2DB8005CA955 /* SDImageView+SDWebCache.m in Sources */,
 				B8105FFE1988CD6700117AAC /* ADTickerLabel.m in Sources */,
-				B877562F19CF22B9000A864E /* SocialViewController.m in Sources */,
 				B872C9211981486100CDFC27 /* MLNavigationController.m in Sources */,
 				B8AF61DD198DE298005F68F7 /* MYIntroductionPanel.m in Sources */,
 				B84359271962FD9400640313 /* AFXMLRequestOperation.m in Sources */,
