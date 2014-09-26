@@ -16,6 +16,8 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 
+#import "SocialService.h"
+
 #define kDefaultBackgroundColor [UIColor colorWithRed:206/255.0 green:31/255.0 blue:118/255.0 alpha:1]
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)?YES:NO
@@ -33,6 +35,7 @@ NSString *sharetitle;
 NSString *sharesubtitle;
 NSString *shareurl;
 NSString *shareimg;
+NSString *callbackurl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -114,10 +117,11 @@ NSString *shareimg;
 
     NSLog(@"value:%@",value);
     
-    sharetitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharetitle').value"];
+    sharetitle  = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharetitle').value"];
     sharesubtitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharesubtitle').value"];
     shareurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareurl').value"];
     shareimg = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareimg').value"];
+    callbackurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('callback').value"];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -213,6 +217,13 @@ NSString *shareimg;
     if(response.responseCode == UMSResponseCodeSuccess)
     {
         //得到分享到的微博平台名
+        SocialService *SearchInfo= [[SocialService alloc] init];
+   
+        [SearchInfo setShareMessages:callbackurl success:^(int status, id JSON) {
+            
+        } failure:^(NSError *error) {
+        }];
+        
         NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
     }
 }

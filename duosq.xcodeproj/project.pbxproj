@@ -86,6 +86,7 @@
 		B877563B19CFD0F1000A864E /* libSocialSina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563319CFD0F1000A864E /* libSocialSina.a */; };
 		B877563C19CFD0F1000A864E /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563619CFD0F1000A864E /* libSocialWechat.a */; };
 		B877563D19CFD0F1000A864E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B877563719CFD0F1000A864E /* libWeChatSDK.a */; };
+		B877564619D3F698000A864E /* SocialService.m in Sources */ = {isa = PBXBuildFile; fileRef = B877564519D3F698000A864E /* SocialService.m */; };
 		B88243971972BBB20076E944 /* KeyWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B88243961972BBB20076E944 /* KeyWordView.m */; };
 		B88243A31972C0870076E944 /* KeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88243A21972C0870076E944 /* KeyView.xib */; };
 		B88243A51972CFD10076E944 /* button_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B88243A41972CFD10076E944 /* button_normal@2x.png */; };
@@ -274,6 +275,8 @@
 		B877563819CFD0F1000A864E /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
 		B877563919CFD0F1000A864E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		B877563A19CFD0F1000A864E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		B877564419D3F698000A864E /* SocialService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocialService.h; path = Model/SocialService.h; sourceTree = "<group>"; };
+		B877564519D3F698000A864E /* SocialService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocialService.m; path = Model/SocialService.m; sourceTree = "<group>"; };
 		B88243951972BBB20076E944 /* KeyWordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyWordView.h; path = View/KeyWordView.h; sourceTree = "<group>"; };
 		B88243961972BBB20076E944 /* KeyWordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyWordView.m; path = View/KeyWordView.m; sourceTree = "<group>"; };
 		B88243A21972C0870076E944 /* KeyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyView.xib; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				B843592F1963048E00640313 /* MetroInfoService.m */,
 				B88AA1F11972DCD200CAF6C4 /* SearchInfoService.h */,
 				B88AA1F21972DCD200CAF6C4 /* SearchInfoService.m */,
+				B877564419D3F698000A864E /* SocialService.h */,
+				B877564519D3F698000A864E /* SocialService.m */,
 			);
 			name = ServiceProvider;
 			sourceTree = "<group>";
@@ -1137,6 +1142,7 @@
 				B815564C198FD1EF00714F15 /* UntilFunctions.m in Sources */,
 				B8155646198E803400714F15 /* EGORefreshTableHeaderView.m in Sources */,
 				B8B101251993C66E000C8BEF /* MYCustonPanel_ip4.m in Sources */,
+				B877564619D3F698000A864E /* SocialService.m in Sources */,
 				B8EE624B196D2DB8005CA955 /* SDWebDataManager.m in Sources */,
 				B843592B196303BD00640313 /* DataHandle.m in Sources */,
 				B8D5D9A91962866800EF27AE /* MetroViewController.m in Sources */,
@@ -1278,7 +1284,10 @@
 		B8996B391961019600CFEE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1307,7 +1316,10 @@
 		B8996B3A1961019600CFEE51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
