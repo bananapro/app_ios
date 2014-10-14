@@ -55,6 +55,16 @@
     
     [self.window makeKeyAndVisible];
     
+    //这里处理应用程序如果没有启动,但是是通过通知消息打开的,此时可以获取到消息.
+    if (launchOptions != nil) {
+        NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        application.applicationIconBadgeNumber = 0;
+        if ([[userInfo objectForKey:@"aps"] objectForKey:@"url"]!=nil) {
+            [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"]];
+        }
+
+    }
+    
     return YES;
 }
 
