@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE545CB919F6731800F692A1 /* iphone5_main_2.0_nav_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB319F6731800F692A1 /* iphone5_main_2.0_nav_1.png */; };
+		AE545CBA19F6731800F692A1 /* iphone5_main_2.0_nav_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB419F6731800F692A1 /* iphone5_main_2.0_nav_2.png */; };
+		AE545CBB19F6731800F692A1 /* iphone5_main_2.0_nav_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB519F6731800F692A1 /* iphone5_main_2.0_nav_3.png */; };
+		AE545CBC19F6731800F692A1 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB619F6731800F692A1 /* refresh.png */; };
+		AE545CBD19F6731800F692A1 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB719F6731800F692A1 /* search.png */; };
+		AE545CBE19F6731800F692A1 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CB819F6731800F692A1 /* setting.png */; };
+		AE545CC219F6B4B500F692A1 /* NewMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE545CC019F6B4B500F692A1 /* NewMainViewController.m */; };
+		AE545CC319F6B4B500F692A1 /* NewMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE545CC119F6B4B500F692A1 /* NewMainViewController.xib */; };
+		AE545CD119F6BB0000F692A1 /* booking_heightlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CCB19F6BB0000F692A1 /* booking_heightlight.png */; };
+		AE545CD319F6BB0000F692A1 /* discovery_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CCD19F6BB0000F692A1 /* discovery_normal.png */; };
+		AE545CD419F6BB0000F692A1 /* discovery_heightlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CCE19F6BB0000F692A1 /* discovery_heightlight.png */; };
+		AE545CD519F6BB0000F692A1 /* like_heightlight.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CCF19F6BB0000F692A1 /* like_heightlight.png */; };
+		AE545CD619F6BB0000F692A1 /* like_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CD019F6BB0000F692A1 /* like_normal.png */; };
+		AE545CD819F6BB5F00F692A1 /* booking_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AE545CD719F6BB5F00F692A1 /* booking_normal.png */; };
+		AE66576919F9479E00BFE388 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66576719F9479E00BFE388 /* WebViewController.m */; };
+		AE66576A19F9479E00BFE388 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE66576819F9479E00BFE388 /* WebViewController.xib */; };
 		B800DA71199A5BE9007B4249 /* iphone4_guide3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B800DA6F199A5BE9007B4249 /* iphone4_guide3@2x.png */; };
 		B800DA7819A1A9B7007B4249 /* default_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B800DA7719A1A9B7007B4249 /* default_background.png */; };
 		B80D34C519C14C1B00A8E6B8 /* main_block_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B80D34C419C14C1B00A8E6B8 /* main_block_6@2x.png */; };
@@ -128,8 +144,6 @@
 		B8B81E5519742512009CDAF6 /* topbar_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B81E5419742512009CDAF6 /* topbar_back@2x.png */; };
 		B8B81E6819743A68009CDAF6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B81E6619743A68009CDAF6 /* BaseViewController.m */; };
 		B8B81E6919743A68009CDAF6 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8B81E6719743A68009CDAF6 /* BaseViewController.xib */; };
-		B8D5D9561961368E00EF27AE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D5D9541961368E00EF27AE /* MainViewController.m */; };
-		B8D5D9571961368E00EF27AE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D5D9551961368E00EF27AE /* MainViewController.xib */; };
 		B8D5D9A91962866800EF27AE /* MetroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D5D9A81962866800EF27AE /* MetroViewController.m */; };
 		B8EB476719B00B0A0001EABB /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EB476619B00B0A0001EABB /* Images-2.xcassets */; };
 		B8EB477319B012FE0001EABB /* Default_320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = B8EB477219B012FE0001EABB /* Default_320x480.png */; };
@@ -155,6 +169,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE545CB319F6731800F692A1 /* iphone5_main_2.0_nav_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone5_main_2.0_nav_1.png; sourceTree = "<group>"; };
+		AE545CB419F6731800F692A1 /* iphone5_main_2.0_nav_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone5_main_2.0_nav_2.png; sourceTree = "<group>"; };
+		AE545CB519F6731800F692A1 /* iphone5_main_2.0_nav_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone5_main_2.0_nav_3.png; sourceTree = "<group>"; };
+		AE545CB619F6731800F692A1 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		AE545CB719F6731800F692A1 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		AE545CB819F6731800F692A1 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		AE545CBF19F6B4B500F692A1 /* NewMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMainViewController.h; sourceTree = "<group>"; };
+		AE545CC019F6B4B500F692A1 /* NewMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMainViewController.m; sourceTree = "<group>"; };
+		AE545CC119F6B4B500F692A1 /* NewMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMainViewController.xib; sourceTree = "<group>"; };
+		AE545CCB19F6BB0000F692A1 /* booking_heightlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booking_heightlight.png; sourceTree = "<group>"; };
+		AE545CCD19F6BB0000F692A1 /* discovery_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discovery_normal.png; sourceTree = "<group>"; };
+		AE545CCE19F6BB0000F692A1 /* discovery_heightlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discovery_heightlight.png; sourceTree = "<group>"; };
+		AE545CCF19F6BB0000F692A1 /* like_heightlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_heightlight.png; sourceTree = "<group>"; };
+		AE545CD019F6BB0000F692A1 /* like_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_normal.png; sourceTree = "<group>"; };
+		AE545CD719F6BB5F00F692A1 /* booking_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booking_normal.png; sourceTree = "<group>"; };
+		AE66575B19F93D0200BFE388 /* DataHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHandle.h; sourceTree = "<group>"; };
+		AE66576619F9479E00BFE388 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		AE66576719F9479E00BFE388 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		AE66576819F9479E00BFE388 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		B800DA6F199A5BE9007B4249 /* iphone4_guide3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone4_guide3@2x.png"; sourceTree = "<group>"; };
 		B800DA7719A1A9B7007B4249 /* default_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_background.png; sourceTree = "<group>"; };
 		B80D34C419C14C1B00A8E6B8 /* main_block_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_block_6@2x.png"; sourceTree = "<group>"; };
@@ -339,9 +372,6 @@
 		B8B81E6619743A68009CDAF6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B8B81E6719743A68009CDAF6 /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 		B8B81E6A19765980009CDAF6 /* UIViewPassValueDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewPassValueDelegate.h; path = Model/UIViewPassValueDelegate.h; sourceTree = "<group>"; };
-		B8D5D9531961368E00EF27AE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		B8D5D9541961368E00EF27AE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B8D5D9551961368E00EF27AE /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		B8D5D9A71962866800EF27AE /* MetroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetroViewController.h; sourceTree = "<group>"; };
 		B8D5D9A81962866800EF27AE /* MetroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetroViewController.m; sourceTree = "<group>"; };
 		B8EB476619B00B0A0001EABB /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
@@ -404,6 +434,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE545CAC19F601E100F692A1 /* v2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				AE545CBF19F6B4B500F692A1 /* NewMainViewController.h */,
+				AE545CC019F6B4B500F692A1 /* NewMainViewController.m */,
+				AE545CC119F6B4B500F692A1 /* NewMainViewController.xib */,
+				AE66575B19F93D0200BFE388 /* DataHandle.h */,
+				AE66576619F9479E00BFE388 /* WebViewController.h */,
+				AE66576719F9479E00BFE388 /* WebViewController.m */,
+				AE66576819F9479E00BFE388 /* WebViewController.xib */,
+			);
+			name = v2.0;
+			sourceTree = "<group>";
+		};
+		AE545CB219F672E800F692A1 /* v2.2 */ = {
+			isa = PBXGroup;
+			children = (
+				AE545CD719F6BB5F00F692A1 /* booking_normal.png */,
+				AE545CCB19F6BB0000F692A1 /* booking_heightlight.png */,
+				AE545CCD19F6BB0000F692A1 /* discovery_normal.png */,
+				AE545CCE19F6BB0000F692A1 /* discovery_heightlight.png */,
+				AE545CCF19F6BB0000F692A1 /* like_heightlight.png */,
+				AE545CD019F6BB0000F692A1 /* like_normal.png */,
+				AE545CB319F6731800F692A1 /* iphone5_main_2.0_nav_1.png */,
+				AE545CB419F6731800F692A1 /* iphone5_main_2.0_nav_2.png */,
+				AE545CB519F6731800F692A1 /* iphone5_main_2.0_nav_3.png */,
+				AE545CB619F6731800F692A1 /* refresh.png */,
+				AE545CB719F6731800F692A1 /* search.png */,
+				AE545CB819F6731800F692A1 /* setting.png */,
+			);
+			name = v2.2;
+			sourceTree = "<group>";
+		};
 		B80D34C919C18A1200A8E6B8 /* icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,9 +923,7 @@
 		B8D5D9581962560C00EF27AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B8D5D9531961368E00EF27AE /* MainViewController.h */,
-				B8D5D9541961368E00EF27AE /* MainViewController.m */,
-				B8D5D9551961368E00EF27AE /* MainViewController.xib */,
+				AE545CAC19F601E100F692A1 /* v2.0 */,
 				B8D5D9A71962866800EF27AE /* MetroViewController.h */,
 				B8D5D9A81962866800EF27AE /* MetroViewController.m */,
 				B8A6FC351969A6500078E804 /* BannerViewController.h */,
@@ -900,6 +961,7 @@
 		B8D5D95C19625A0500EF27AE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AE545CB219F672E800F692A1 /* v2.2 */,
 				B80D34EA19C2BB0B00A8E6B8 /* topbar_back_white@2x.png */,
 				B80D34CB19C18AA500A8E6B8 /* loading */,
 				B80D34CA19C18A7800A8E6B8 /* guide */,
@@ -1039,16 +1101,23 @@
 				B80D34E019C2B8A000A8E6B8 /* icon_new_29.png in Resources */,
 				B867EC0E19951EDC005BA650 /* main_block_3@2x.png in Resources */,
 				B80D34E519C2B8A000A8E6B8 /* icon_new_80.png in Resources */,
+				AE545CD119F6BB0000F692A1 /* booking_heightlight.png in Resources */,
 				B8AF61BF198AA5EC005F68F7 /* entryinfo.conf in Resources */,
 				B86B638D19B15F68005F38A5 /* Default.png in Resources */,
+				AE545CD619F6BB0000F692A1 /* like_normal.png in Resources */,
+				AE545CB919F6731800F692A1 /* iphone5_main_2.0_nav_1.png in Resources */,
 				B877562719CF1E68000A864E /* UMShareEditViewControlleriPad.xib in Resources */,
 				B86B638B19B15F14005F38A5 /* Default~iphone.png in Resources */,
+				AE545CD419F6BB0000F692A1 /* discovery_heightlight.png in Resources */,
 				B80D34E319C2B8A000A8E6B8 /* icon_new_58.png in Resources */,
 				B877562919CF1E68000A864E /* UMSnsAccountViewController.xib in Resources */,
+				AE545CD819F6BB5F00F692A1 /* booking_normal.png in Resources */,
 				B88243A31972C0870076E944 /* KeyView.xib in Resources */,
 				B887FD4D19718AF8006D39FA /* search_bar.png in Resources */,
 				B80D34E919C2B8A000A8E6B8 /* icon_new_144.png in Resources */,
+				AE545CBE19F6731800F692A1 /* setting.png in Resources */,
 				B85D2E38197AC93400C53A6A /* main_nav@2x.png in Resources */,
+				AE545CBA19F6731800F692A1 /* iphone5_main_2.0_nav_2.png in Resources */,
 				B800DA71199A5BE9007B4249 /* iphone4_guide3@2x.png in Resources */,
 				B877562819CF1E68000A864E /* UMSLoginViewController.xib in Resources */,
 				B80D34C819C17FD200A8E6B8 /* Default-568h@2x.png in Resources */,
@@ -1058,9 +1127,12 @@
 				B8155642198DE97800714F15 /* MYCustomPanel.xib in Resources */,
 				B8EE6245196D2DB8005CA955 /* readme.txt in Resources */,
 				B877562119CF1E68000A864E /* UMSocialLocalizable.strings in Resources */,
+				AE545CBB19F6731800F692A1 /* iphone5_main_2.0_nav_3.png in Resources */,
 				B80D34EB19C2BB0B00A8E6B8 /* topbar_back_white@2x.png in Resources */,
 				B877562B19CF1E68000A864E /* UMSocialSDKResourcesNew.bundle in Resources */,
+				AE545CD319F6BB0000F692A1 /* discovery_normal.png in Resources */,
 				B872C9241982092500CDFC27 /* topbar_back_white@2x.png in Resources */,
+				AE545CC319F6B4B500F692A1 /* NewMainViewController.xib in Resources */,
 				B80D34F219C683EE00A8E6B8 /* icon29.png in Resources */,
 				B8996B1A1961019600CFEE51 /* InfoPlist.strings in Resources */,
 				B8EB476719B00B0A0001EABB /* Images-2.xcassets in Resources */,
@@ -1068,7 +1140,7 @@
 				B80D34E619C2B8A000A8E6B8 /* icon_new_100.png in Resources */,
 				B867EC1319951EDC005BA650 /* main_block_subscribe@2x.png in Resources */,
 				B877562519CF1E68000A864E /* UMSCommentInputControlleriPad.xib in Resources */,
-				B8D5D9571961368E00EF27AE /* MainViewController.xib in Resources */,
+				AE545CD519F6BB0000F692A1 /* like_heightlight.png in Resources */,
 				B8B101271993C6A7000C8BEF /* MYCustomPanel_ip4.xib in Resources */,
 				B8B81E5519742512009CDAF6 /* topbar_back@2x.png in Resources */,
 				B867EC1219951EDC005BA650 /* main_block_7@2x.png in Resources */,
@@ -1083,10 +1155,13 @@
 				B8B1011A1993C316000C8BEF /* iphone4_guide1@2x.png in Resources */,
 				B8996B221961019600CFEE51 /* Images.xcassets in Resources */,
 				B867EC0D19951EDC005BA650 /* main_block_2@2x.png in Resources */,
+				AE545CBC19F6731800F692A1 /* refresh.png in Resources */,
 				B8AF61C1198D2109005F68F7 /* search_bar_new@2x.png in Resources */,
 				B867EC0C19951EDC005BA650 /* main_block_1@2x.png in Resources */,
+				AE545CBD19F6731800F692A1 /* search.png in Resources */,
 				B80D34E419C2B8A000A8E6B8 /* icon_new_72.png in Resources */,
 				B8B81E6919743A68009CDAF6 /* BaseViewController.xib in Resources */,
+				AE66576A19F9479E00BFE388 /* WebViewController.xib in Resources */,
 				B85D2E3A197AC9AE00C53A6A /* main_subscribe@2x.png in Resources */,
 				B8B101211993C346000C8BEF /* iphone5_guide2@2x.png in Resources */,
 				B800DA7819A1A9B7007B4249 /* default_background.png in Resources */,
@@ -1130,7 +1205,7 @@
 				B84359271962FD9400640313 /* AFXMLRequestOperation.m in Sources */,
 				B8B81E6819743A68009CDAF6 /* BaseViewController.m in Sources */,
 				B8EE6234196D2CBE005CA955 /* SGFocusImageItem.m in Sources */,
-				B8D5D9561961368E00EF27AE /* MainViewController.m in Sources */,
+				AE66576919F9479E00BFE388 /* WebViewController.m in Sources */,
 				B84359281962FD9400640313 /* UIImageView+AFNetworking.m in Sources */,
 				B8155640198DE95A00714F15 /* MYCustomPanel.m in Sources */,
 				B81556591990811E00714F15 /* KeychainItemWrapper.m in Sources */,
@@ -1158,6 +1233,7 @@
 				B8105FFB1987766100117AAC /* ButtonMessages.m in Sources */,
 				B8155652198FD4D400714F15 /* Reachability.m in Sources */,
 				B8AF61DB198DE298005F68F7 /* AMBlurView.m in Sources */,
+				AE545CC219F6B4B500F692A1 /* NewMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1284,12 +1360,9 @@
 		B8996B391961019600CFEE51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
+				ARCHS = armv7;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1300,10 +1373,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/juno/Documents/iosapp/duosq/duosq,
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_4.1",
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_Extra_Frameworks/Sina",
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/duosq",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -1316,12 +1389,9 @@
 		B8996B3A1961019600CFEE51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
+				ARCHS = armv7;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1332,14 +1402,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/juno/Documents/iosapp/duosq/duosq,
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_4.1",
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_Extra_Frameworks/Sina",
 					"$(PROJECT_DIR)/duosq/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/duosq",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "－licucore";
-				"OTHER_LDFLAGS[arch=*]" = "";
+				OTHER_LDFLAGS = "";
+				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

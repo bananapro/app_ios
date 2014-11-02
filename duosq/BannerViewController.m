@@ -42,7 +42,7 @@
 }
 
 - (void)loadDefaultBanner{
-    CGRect frame = CGRectMake(0, 0, 312, 80);
+    CGRect frame = CGRectMake(0, 0, 320, 80);
     self.defaultBanner = [[UIImageView alloc] init];
     self.defaultBanner.frame = frame;
     
@@ -68,7 +68,7 @@
 	}
 	else
 	{
-		CGRect frame = CGRectMake(0, 0, 312, 80);
+		CGRect frame = CGRectMake(0, 0, 320, 80);
 		
 		SGFocusImageFrame *imageFrame = [[SGFocusImageFrame alloc] initWithFrame:frame delegate:self  focusImageArray:items];
 		imageFrame.tag = kBannerViewTag;
@@ -87,7 +87,8 @@
 -(void)foucusImageFrame:(SGFocusImageFrame *)imageFrame didSelectItem:(SGFocusImageItem *)item{
     NSString *url = item.link;
     if (0 != url.length) {
-        [self.maindelegate openWebContentView:url];
+        NSLog(@"maindelegate");
+        [self.maindelegate openWebContentView:url isHistory:0 noparam:0];
 	}
 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "UIViewPassValueDelegate.h"
 
 @interface ProductWebViewController : UIViewController<UIWebViewDelegate,UIScrollViewDelegate,UIAlertViewDelegate,MBProgressHUDDelegate>{
     MBProgressHUD *HUD;
@@ -18,11 +19,23 @@
 @property (strong, nonatomic) IBOutlet UIWebView *productWebView;
 @property (strong, nonatomic) NSString *urlStr;
 @property (assign) int noParam;
+@property (assign) int isHistory;
 @property (strong, nonatomic) NSString *settingUrl;
 - (IBAction)settingBtn:(id)sender;
-- (IBAction)test:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *webviwTitle;
 - (IBAction)back:(id)sender;
+
+@property (strong, nonatomic)NSString *sharetitle;
+@property (strong, nonatomic)NSString *sharesubtitle;
+@property (strong, nonatomic)NSString *shareurl;
+@property (strong, nonatomic)NSString *shareimg;
+@property (strong, nonatomic)NSString *callbackurl;
+
+@property (strong, nonatomic) NSTimer *timer;
+
+@property (assign) int isComeback;
+
+@property(nonatomic,strong) id<UIViewPassValueDelegate> maindelegate;
 
 @end

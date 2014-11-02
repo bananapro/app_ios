@@ -30,13 +30,6 @@
 
 @implementation ProductWebViewController
 
-
-NSString *sharetitle;
-NSString *sharesubtitle;
-NSString *shareurl;
-NSString *shareimg;
-NSString *callbackurl;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -83,10 +76,12 @@ NSString *callbackurl;
         NSLog(@"productWebView URL:%@",urlRequest);
     }
     NSURL *url =[NSURL URLWithString:urlRequest];
-//    NSURL *url = [NSURL URLWithString:@"http://10.50.180.233/duosq/weixin_test.php"];
+//    NSURL *url = [NSURL URLWithString:@"http://zeng.duosq.com/test_history.php"];
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
     [self.productWebView loadRequest:request];
     self.productWebView.delegate = self;
+    
+    self.isComeback = 0;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -96,7 +91,7 @@ NSString *callbackurl;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView{
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     NSRange range = [self.urlStr rangeOfString:@"duosq"];
     if (range.location != NSNotFound) {
         [self showLoading];
@@ -117,11 +112,16 @@ NSString *callbackurl;
 
     NSLog(@"value:%@",value);
     
-    sharetitle  = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharetitle').value"];
-    sharesubtitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharesubtitle').value"];
-    shareurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareurl').value"];
-    shareimg = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareimg').value"];
-    callbackurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('callback').value"];
+    if (0 == self.isComeback) {
+        self.sharetitle  = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharetitle').value"];
+        self.sharesubtitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('sharesubtitle').value"];
+        self.shareurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareurl').value"];
+        self.shareimg = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('shareimg').value"];
+        self.callbackurl = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('callback').value"];
+    }else{
+        [webView stringByEvaluatingJavaScriptFromString:self.callbackurl];
+        self.isComeback = 0;
+    }
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -133,17 +133,24 @@ NSString *callbackurl;
         NSString *str=[url absoluteString];
         NSLog(@"str:%@",str);
         if([str isMatchedByRegex:@"\\jump:\\w+"]){
-            NSArray *results = [str componentsSeparatedByRegex:@"\\jump:"];
+            NSArray *results = [str componentsSeparatedByRegex:@"\\:"];
+            NSLog(@"results:%@",results);
             if ([results[1] isEqualToString:@"feedback"]) {
                 [self openfeedback];
             }else if ([results[1] isEqualToString:@"sharesocial"]) {
                 [self shareSocial];
+            }else if ([results[1] isEqualToString:@"history"]){
+                NSArray *urlArr = [str componentsSeparatedByRegex:@"\\jump:history:"];
+                NSLog(@"urlArr:%@",urlArr);
+                [self openWebContentView:urlArr[1] isHistory:1 noparam:0];
+            }else if ([results[1] isEqualToString:@"back"]){
+                [self backAction];
+            }else if ([results[1] isEqualToString:@"setting"]){
+                [self.maindelegate settingAction];
             }else{
-                NSURL *go_url =[NSURL URLWithString:results[1]];
-                if([[UIApplication sharedApplication]canOpenURL:go_url])
-                {
-                    [self openWebContentView:results[1]];
-                }
+                NSArray *urlArr = [str componentsSeparatedByRegex:@"\\jump:"];
+                NSLog(@"urlArr:%@",urlArr);
+                [self openWebContentView:urlArr[1] isHistory:0 noparam:1];
             }
             return NO;
         }
@@ -156,12 +163,12 @@ NSString *callbackurl;
 }
 
 //dalegate functions
--(void)openWebContentView:(NSString *)url
+-(void)openWebContentView:(NSString *)url isHistory:(int)isHistory noparam:(int)noparam
 {
     ProductWebViewController  *webContentView = [[ProductWebViewController alloc] initWithNibName:@"ProductWebViewController" bundle:nil];
     webContentView.urlStr = url;
-    webContentView.noParam = 1;
-    NSLog(@"gourl:%@",url);
+    webContentView.noParam = noparam;
+    webContentView.isHistory= isHistory;
     
     [super.navigationController pushViewController:webContentView animated:YES];
 }
@@ -172,18 +179,23 @@ NSString *callbackurl;
 
 - (IBAction)back:(id)sender {
     NSLog(@"webview back");
-    [self.navigationController popViewControllerAnimated:YES];
+    [self backAction];
+}
+
+-(void)backAction{
+    if (self.isHistory == 1 && self.productWebView.canGoBack) {
+        [self.productWebView goBack];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)settingBtn:(id)sender {
     if(self.settingUrl.length>0){
-        [self openWebContentView:self.settingUrl];
+        [self openWebContentView:self.settingUrl isHistory:0 noparam:0];
     }
 }
 
-- (IBAction)test:(id)sender {
-    NSLog(@"test>>>>>>>>>>>>>>>>>>>>>>>>>>");
-}
 
 -(void)showLoading{
     HUD = [[MBProgressHUD alloc] initWithView:self.productWebView.viewForBaselineLayout];
@@ -193,21 +205,33 @@ NSString *callbackurl;
     HUD.labelText = @"加载中";
 	
     [HUD show:YES];
+    //设置定时器关闭loading
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:3
+//                                                  target:self
+//                                                selector:@selector(closeLoading)
+//                                                userInfo:nil
+//                                                 repeats:NO];
+}
+
+-(void)closeLoading{
+    NSLog(@"closeLoading");
+    [HUD hide:YES];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 -(void)shareSocial{
-
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:shareimg]];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.shareimg]];
     UIImage *shareimage = [UIImage imageWithData:imageData];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"53e23d15fd98c539f6008f10"
-                                      shareText:sharesubtitle
+                                      shareText:self.sharesubtitle
                                      shareImage:shareimage
                                 shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]
                                        delegate:self];
-    [UMSocialData defaultData].extConfig.title = sharetitle;
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = shareurl;
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = shareurl;
+    [UMSocialData defaultData].extConfig.title = self.sharetitle;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = self.shareurl;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = self.shareurl;
 }
 
 //实现回调方法（可选）：
@@ -216,17 +240,12 @@ NSString *callbackurl;
     //根据`responseCode`得到发送结果,如果分享成功
     if(response.responseCode == UMSResponseCodeSuccess)
     {
-        //得到分享到的微博平台名
-        SocialService *SearchInfo= [[SocialService alloc] init];
-   
-        [SearchInfo setShareMessages:callbackurl success:^(int status, id JSON) {
-            
-        } failure:^(NSError *error) {
-        }];
-        
-        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+        self.isComeback = 1;
+        [self reload];
     }
 }
 
-
+-(void)reload{
+    [self.productWebView reload];
+}
 @end

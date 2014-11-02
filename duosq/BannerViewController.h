@@ -12,8 +12,10 @@
 #import "BaseViewController.h"
 #import "UIViewPassValueDelegate.h"
 
-@interface BannerViewController : BaseViewController<SGFocusImageFrameDelegate>
+@interface BannerViewController : BaseViewController<SGFocusImageFrameDelegate>{
+    id <UIViewPassValueDelegate> maindelegate;
+}
 
-@property(nonatomic,strong)id<UIViewPassValueDelegate> maindelegate;
+@property(nonatomic,strong) id<UIViewPassValueDelegate> maindelegate;
 @property(nonatomic,strong) UIImageView *defaultBanner;
 @end

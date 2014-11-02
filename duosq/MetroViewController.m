@@ -251,7 +251,7 @@ NSMutableDictionary *tagsBtn;
         [self clearMessages:[NSString stringWithFormat:@"%@",[view.entry objectForKey:@"id"]] messages:messagesnum];
         [view clearMessage];
 //        [view setMessage:@"0"];
-        [self.maindelegate openWebContentView:url];
+        [self.maindelegate openWebContentView:url isHistory:0 noparam:0];
 	}
 }
 

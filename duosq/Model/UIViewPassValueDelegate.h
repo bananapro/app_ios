@@ -7,6 +7,9 @@
 //
 
 @protocol UIViewPassValueDelegate
--(void)openWebContentView:(NSString *)url;
+-(void)openWebContentView:(NSString *)url isHistory:(int)isHistory noparam:(int)noparam;
 -(void)changeSearchValue:(NSString *)searchWord;
+-(void)shareSocial:(NSString *)shareimg sharetitle:(NSString *)sharetitle sharesubtitle:(NSString *)sharesubtitle shareurl:(NSString *)shareurl;
+- (void)gotoPage:(int)p;
+-(void)settingAction;
 @end

@@ -10,24 +10,36 @@
 	<string>duosq</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>699F958A318ABF56D21AC51CF08197D037C5E63E</key>
+		<string>github.com:bananapro/app_ios.git</string>
 		<key>EC9BD8D1-EB8F-47FD-8B40-FCCEEDDF7542</key>
 		<string>ssh://github.com/juno911/git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>duosq/duosq.xcodeproj/project.xcworkspace</string>
+	<string>duosq.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>699F958A318ABF56D21AC51CF08197D037C5E63E</key>
+		<string>../..</string>
 		<key>EC9BD8D1-EB8F-47FD-8B40-FCCEEDDF7542</key>
-		<string>../../..</string>
+		<string>../../../iosapp</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/juno911/git</string>
+	<string>github.com:bananapro/app_ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EC9BD8D1-EB8F-47FD-8B40-FCCEEDDF7542</string>
+	<string>699F958A318ABF56D21AC51CF08197D037C5E63E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>699F958A318ABF56D21AC51CF08197D037C5E63E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>app_ios</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

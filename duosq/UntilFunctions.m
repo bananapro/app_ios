@@ -106,7 +106,7 @@
 + (NSString *)getUrl:(NSDictionary *)new_params{
     NSString *device_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"device_id"];
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1.0",@"app_ver",
+                                   @"2.0",@"app_ver",
                                    @"v1",@"ver",
                                    @"ios",@"platform",
                                    device_id,@"device_id",

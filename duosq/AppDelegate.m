@@ -8,11 +8,11 @@
 
 #import "AppDelegate.h"
 #import "UMSocial.h"
-#import "BaseViewController.h"
 #import "MLNavigationController.h"
 #import "UntilFunctions.h"
 #import "SSKeychain.h"
 #import "UMSocialWechatHandler.h"
+#import "NewMainViewController.h"
 #import <SenTestingKit/SenTestingKit.h>
 
 @implementation AppDelegate
@@ -43,7 +43,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    self.mainViewcontr = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    self.mainViewcontr = [[NewMainViewController alloc] initWithNibName:@"NewMainViewController" bundle:nil];
     MLNavigationController *navmainViewcontr = [[MLNavigationController alloc]initWithRootViewController:self.mainViewcontr];
 
     navmainViewcontr.navigationBarHidden = YES;
@@ -60,7 +60,7 @@
         NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
         application.applicationIconBadgeNumber = 0;
         if ([[userInfo objectForKey:@"aps"] objectForKey:@"url"]!=nil) {
-            [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"]];
+            [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"] isHistory:0 noparam:0];
         }
 
     }
@@ -122,7 +122,7 @@
     //把icon上的标记数字设置为0,
     application.applicationIconBadgeNumber = 0;
     if ([[userInfo objectForKey:@"aps"] objectForKey:@"url"]!=nil) {
-        [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"]];
+        [self.mainViewcontr openWebContentView:[[userInfo objectForKey:@"aps"] objectForKey:@"url"] isHistory:0 noparam:0];
     }
 }
 
